@@ -5,9 +5,8 @@ export const dynamic = "force-static";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPosts();
-  const baseUrl = "https://jintasit.com"; // Update this to your actual domain
+  const baseUrl = "https://jintasit.com";
 
-  // Static pages
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
@@ -23,7 +22,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  // Dynamic blog posts
   const blogPosts: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${baseUrl}${post.url}`,
     lastModified: new Date(post.date),

@@ -18,6 +18,11 @@ export default function Comments({
   const commentsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const container = commentsRef.current;
+    if (!container) return;
+
+    container.innerHTML = "";
+
     const script = document.createElement("script");
     script.src = "https://utteranc.es/client.js";
     script.setAttribute("repo", repo);
@@ -29,13 +34,11 @@ export default function Comments({
     script.setAttribute("crossorigin", "anonymous");
     script.async = true;
 
-    if (commentsRef.current) {
-      commentsRef.current.appendChild(script);
-    }
+    container.appendChild(script);
 
     return () => {
-      if (commentsRef.current) {
-        commentsRef.current.innerHTML = "";
+      while (container.firstChild) {
+        container.removeChild(container.firstChild);
       }
     };
   }, [repo, issueTerm, label, theme]);

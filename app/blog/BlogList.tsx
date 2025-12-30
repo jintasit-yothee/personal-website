@@ -11,22 +11,19 @@ interface BlogListProps {
   allTags: string[];
 }
 
-// Rainbow gradient that rotates based on day
 const getRainbowGradient = (date: string): string => {
   const day = new Date(date).getDate();
   const rainbowColors = [
-    "#FF6B6B", // Red
-    "#FF8E53", // Orange
-    "#FFB84D", // Yellow
-    "#9AE67D", // Green
-    "#6A9CFF", // Blue
-    "#B07CE8", // Violet
+    "#FF6B6B",
+    "#FF8E53",
+    "#FFB84D",
+    "#9AE67D",
+    "#6A9CFF",
+    "#B07CE8",
   ];
 
-  // Rotate starting position based on day (cycles through 6 colors)
   const startIndex = (day - 1) % 6;
 
-  // Create a rotated array starting from the calculated position
   const rotatedColors = [
     ...rainbowColors.slice(startIndex),
     ...rainbowColors.slice(0, startIndex),
@@ -40,10 +37,8 @@ export default function BlogList({ posts, allTags }: BlogListProps) {
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredPosts = posts.filter((post) => {
-    // Filter by tag
     const matchesTag = !selectedTag || post.tags?.includes(selectedTag);
 
-    // Filter by search query
     const matchesSearch = !searchQuery ||
       post.title.toLowerCase().includes(searchQuery.toLowerCase());
 

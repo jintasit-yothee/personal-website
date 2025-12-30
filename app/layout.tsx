@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Jintasit Yothee - Full Stack Software Engineer",
   description: "Full stack software engineer with 12+ years of experience building impactful solutions",
+  icons: {
+    icon: "/images/profile.jpg",
+  },
 };
 
 export default function RootLayout({

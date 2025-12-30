@@ -30,7 +30,6 @@ export interface BlogPostMetadata {
  */
 export async function getAllPosts(): Promise<Omit<BlogPost, "content">[]> {
   try {
-    // Check if posts directory exists
     if (!fs.existsSync(postsDirectory)) {
       return [];
     }
@@ -41,15 +40,12 @@ export async function getAllPosts(): Promise<Omit<BlogPost, "content">[]> {
       const fileContents = fs.readFileSync(fullPath, "utf8");
       const { data } = matter(fileContents);
 
-      // Extract year and month from the date
       const date = new Date(data.date || Date.now());
       const year = date.getFullYear().toString();
       const month = (date.getMonth() + 1).toString().padStart(2, "0");
 
-      // Get slug from filename (remove date prefix and .md extension)
-      // e.g., "2025/12/25-i-still-use-windows.md" -> "i-still-use-windows"
       const baseName = path.basename(fileName, ".md");
-      const slug = baseName.replace(/^\d{1,2}-/, ""); // Remove date prefix like "25-"
+      const slug = baseName.replace(/^\d{1,2}-/, "");
 
       return {
         slug,
@@ -64,7 +60,6 @@ export async function getAllPosts(): Promise<Omit<BlogPost, "content">[]> {
       };
     });
 
-    // Sort posts by date (newest first)
     return posts.sort((a, b) => {
       return new Date(b.date).getTime() - new Date(a.date).getTime();
     });
@@ -83,18 +78,16 @@ export async function getPostBySlug(
   slug: string
 ): Promise<BlogPost | null> {
   try {
-    // Look for the post in the year/month directory
     const yearMonthPath = path.join(postsDirectory, year, month);
 
     if (!fs.existsSync(yearMonthPath)) {
       return null;
     }
 
-    // Find the file that matches the slug (with any date prefix)
     const files = fs.readdirSync(yearMonthPath);
     const matchingFile = files.find((file) => {
       const baseName = path.basename(file, ".md");
-      const fileSlug = baseName.replace(/^\d{1,2}-/, ""); // Remove date prefix
+      const fileSlug = baseName.replace(/^\d{1,2}-/, "");
       return fileSlug === slug && file.endsWith(".md");
     });
 
@@ -106,7 +99,6 @@ export async function getPostBySlug(
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data, content } = matter(fileContents);
 
-    // Verify the date matches the URL
     const date = new Date(data.date || Date.now());
     const postYear = date.getFullYear().toString();
     const postMonth = (date.getMonth() + 1).toString().padStart(2, "0");
@@ -150,7 +142,6 @@ function getAllMarkdownFiles(dir: string): string[] {
     const stat = fs.statSync(fullPath);
 
     if (stat.isDirectory()) {
-      // Recursively get files from subdirectories
       const subFiles = getAllMarkdownFiles(fullPath);
       files.push(...subFiles);
     } else if (item.endsWith(".md") && !item.toLowerCase().includes("readme")) {
