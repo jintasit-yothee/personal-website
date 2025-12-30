@@ -2,7 +2,7 @@
 title: "I Still Use Windows"
 date: "2025-12-25"
 excerpt: "Why I chose to stick with Windows and WSL instead of switching to Linux full-time, despite being a software engineer who loves the terminal."
-image: "/images/2025/12/i-still-use-windows.png"
+image: "/images/2025/12/25-i-still-use-windows.png"
 tags: ["tech", "lifestyle"]
 ---
 

@@ -84,7 +84,7 @@ pnpm start
 title: "Your Post Title"
 date: "2025-12-30"
 excerpt: "A brief description"
-image: "/images/2025/12/post-image.png"
+image: "/images/2025/12/30-post-image.png"
 tags: ["tech", "lifestyle"]
 ---
 
@@ -103,7 +103,10 @@ Add new tags by simply including them in post frontmatter - they'll automaticall
 ### Images
 
 - Place post images in `public/images/YYYY/MM/`
-- Reference in frontmatter: `image: "/images/2025/12/image-name.png"`
+- **Naming Convention:** Image files should start with the same day number as the post
+  - Post: `posts/2025/12/25-i-still-use-windows.md`
+  - Image: `public/images/2025/12/25-i-still-use-windows.png`
+- Reference in frontmatter: `image: "/images/2025/12/25-image-name.png"`
 - Icons and global images go in `public/images/icons/` or `public/images/`
 
 See [posts/README.md](./posts/README.md) for detailed documentation.
