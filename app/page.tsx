@@ -33,15 +33,20 @@ export default async function Home() {
         </p>
 
         <p>
-          Full stack engineer with 12+ years building scalable web applications from startups to enterprise.
-          I work across the entire stack—React frontends, Node.js/Python/Scala/Go backends, and cloud infrastructure on GCP.
+          I&apos;ve been building software for over 12+ years now, working across the full stack and diving into data engineering.
+          I enjoy the variety—some days I&apos;m working on React frontends, other days I&apos;m writing Go or Kotlin APIs, and sometimes I&apos;m knee-deep in data pipelines with DBT and BigQuery.
         </p>
 
         <p>
-          My focus is on building products that solve real problems at scale.
-          Whether it&apos;s architecting systems that handle millions of users or designing data pipelines that drive business decisions,
-          I believe the best solutions come from truly understanding the problem first.
-          I&apos;m also passionate about mentoring engineers and sharing this problem-first mindset with teams.
+          What keeps me interested is working on problems that actually matter.
+          I&apos;ve spent time modernizing legacy systems, building data workflows that help teams make better decisions, and setting up infrastructure that just works.
+          The tech stack changes, but the challenge of understanding what really needs to be built stays the same.
+        </p>
+
+        <p>
+          I also enjoy mentoring other engineers.
+          I think the best code comes from really understanding the problem you&apos;re solving, not jumping straight to the solution.
+          That&apos;s what I try to share with the teams I work with.
         </p>
       </div>
 

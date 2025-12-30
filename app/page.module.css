@@ -131,6 +131,110 @@
   flex: 1;
 }
 
+.experience {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(var(--text-primary), 0.1);
+}
+
+.experience h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.job {
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(var(--text-primary), 0.08);
+}
+
+.job:last-child {
+  border-bottom: none;
+}
+
+.jobHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  gap: 20px;
+}
+
+.jobHeader h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.location {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.duration {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-align: right;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.role {
+  margin-bottom: 28px;
+  padding-left: 20px;
+  border-left: 2px solid rgba(var(--text-primary), 0.1);
+}
+
+.role:last-child {
+  margin-bottom: 0;
+}
+
+.role h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.period {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0 0 12px 0;
+  font-style: italic;
+}
+
+.role p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.role ul {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.role li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.role li:last-child {
+  margin-bottom: 0;
+}
+
 .ctas {
   display: flex;
   flex-direction: row;
