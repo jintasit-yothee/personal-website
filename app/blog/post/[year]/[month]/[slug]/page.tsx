@@ -74,7 +74,7 @@ export default async function PostPage({ params }: PostPageProps) {
       </main>
 
       <div className={styles.comments}>
-        <Comments repo="jintasit-yothee/my-web" issueTerm="pathname" label="blog-comment" />
+        <Comments repo="jintasit-yothee/personal-website" issueTerm="pathname" label="blog-comment" />
       </div>
     </div>
   );
