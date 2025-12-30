@@ -1,36 +1,167 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Blog Website
+
+A modern, responsive blog built with Next.js 15, featuring a clean design, tag-based filtering, and full-text search.
+
+## Features
+
+- **📝 Markdown Blog Posts** - Write posts in Markdown with frontmatter support
+- **🏷️ Tag System** - Categorize posts with tags and filter by category
+- **🔍 Search** - Real-time search by post title
+- **📅 Date Organization** - Posts organized by year/month directory structure
+- **🎨 Responsive Grid Layout** - 3-column grid on desktop, adapts to mobile
+- **🖼️ Image Management** - Organized image structure matching post dates
+- **✨ Smooth Animations** - Card hover effects with image zoom and transitions
+- **🌈 Rainbow Borders** - Dynamic gradient borders based on post date
+- **⚡ Static Generation** - Fast page loads with Next.js SSG
+- **📱 Mobile Responsive** - Optimized for all screen sizes
+
+## Tech Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Styling:** CSS Modules
+- **Markdown:** gray-matter, react-markdown
+- **Package Manager:** pnpm
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- pnpm (recommended) or npm
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Run the development server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) to view the site
 
-## Learn More
+### Build for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm build
+pnpm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+├── app/
+│   ├── blog/              # Blog listing and post pages
+│   ├── page.tsx           # Homepage
+│   └── layout.tsx         # Root layout
+├── lib/
+│   └── blog.ts            # Blog post utilities
+├── posts/
+│   └── YYYY/MM/           # Blog posts organized by date
+│       └── DD-slug.md
+├── public/
+│   └── images/
+│       └── YYYY/MM/       # Images organized by date
+└── README.md
+```
 
-## Deploy on Vercel
+## Writing Blog Posts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Creating a New Post
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Create a file in `posts/YYYY/MM/DD-post-slug.md`
+2. Add frontmatter:
+
+```markdown
+---
+title: "Your Post Title"
+date: "2025-12-30"
+excerpt: "A brief description"
+image: "/images/2025/12/post-image.png"
+tags: ["tech", "lifestyle"]
+---
+
+# Your Post Title
+
+Your content here...
+```
+
+### Available Tags
+
+- `tech` - Technology, programming, software development
+- `lifestyle` - Personal experiences, opinions, lifestyle choices
+
+Add new tags by simply including them in post frontmatter - they'll automatically appear in the filter UI.
+
+### Images
+
+- Place post images in `public/images/YYYY/MM/`
+- Reference in frontmatter: `image: "/images/2025/12/image-name.png"`
+- Icons and global images go in `public/images/icons/` or `public/images/`
+
+See [posts/README.md](./posts/README.md) for detailed documentation.
+
+## Development
+
+### Linting
+
+```bash
+pnpm lint
+```
+
+### Type Checking
+
+```bash
+pnpm build
+```
+
+## Features in Detail
+
+### Tag Filtering
+- Click tag buttons to filter posts by category
+- Combine with search for refined results
+- "All" button to clear filters
+
+### Search
+- Real-time search as you type
+- Case-insensitive title matching
+- Works alongside tag filtering
+
+### Responsive Design
+- **Desktop (>1024px):** 3-column grid
+- **Tablet (768-1024px):** 2-column grid
+- **Mobile (<768px):** Single column
+
+## Deployment
+
+### Cloudflare Pages (Recommended - Free)
+
+This project is configured for Cloudflare Pages deployment with:
+- ✅ Static export enabled
+- ✅ Node version pinned
+- ✅ Unlimited bandwidth on free tier
+
+See **[CLOUDFLARE_DEPLOYMENT.md](./CLOUDFLARE_DEPLOYMENT.md)** for step-by-step setup guide.
+
+**Quick Deploy:**
+1. Push to GitHub
+2. Connect repo to Cloudflare Pages
+3. Use build command: `pnpm build`
+4. Output directory: `out`
+
+### Vercel (Alternative)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+Deploy using the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
+
+## License
+
+This project is open source and available under the MIT License.
