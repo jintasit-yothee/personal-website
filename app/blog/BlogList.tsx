@@ -90,7 +90,7 @@ export default function BlogList({ posts, allTags }: BlogListProps) {
               key={post.slug}
               className={styles.postCard}
               style={{
-                borderImage: `linear-gradient(90deg, ${getRainbowGradient(post.date)}) 1`,
+                ['--gradient-colors' as any]: getRainbowGradient(post.date),
               }}
             >
               <Link href={post.url} className={styles.postLink}>

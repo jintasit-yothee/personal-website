@@ -15,11 +15,12 @@ export default async function BlogPage() {
 
   return (
     <div className={styles.container}>
+      <Link href="/" className={styles.backLink}>
+        &larr; Back to Home
+      </Link>
+
       <header className={styles.header}>
         <h1>Blog</h1>
-        <Link href="/" className={styles.homeLink}>
-          Back to Home
-        </Link>
       </header>
 
       <main className={styles.main}>

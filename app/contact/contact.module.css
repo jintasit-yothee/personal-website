@@ -1,0 +1,139 @@
+.main {
+  --background: #f5f5f4;
+  --foreground: #fafaf9;
+
+  --text-primary: #2d2d2d;
+  --text-secondary: #6b6b6b;
+
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: var(--font-geist-sans);
+  background-color: var(--foreground);
+  padding: 40px 100px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.backLink {
+  color: var(--text-primary);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--text-primary);
+  border-radius: 4px;
+  transition: all 0.2s;
+  align-self: flex-start;
+}
+
+.backLink:hover {
+  background-color: var(--text-primary);
+  color: var(--foreground);
+}
+
+.container h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.contactMethods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.contactCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background-color: rgba(var(--text-primary), 0.03);
+  border: 1px solid rgba(var(--text-primary), 0.1);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.contactCard:hover {
+  background-color: rgba(var(--text-primary), 0.06);
+  border-color: rgba(var(--text-primary), 0.2);
+  transform: translateY(-2px);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  color: var(--text-primary);
+}
+
+.contactInfo {
+  flex: 1;
+}
+
+.contactInfo h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.contactInfo p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 48px 24px;
+  }
+
+  .container h1 {
+    font-size: 36px;
+  }
+
+  .contactMethods {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .main {
+    --background: #0f0f0f;
+    --foreground: #1a1a1a;
+
+    --text-primary: #e5e5e5;
+    --text-secondary: #a0a0a0;
+  }
+}

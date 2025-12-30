@@ -1,35 +1,33 @@
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 70px;
+  padding: 40px 70px;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 3rem;
-  /* border-bottom: 2px solid var(--foreground); */
-  padding-bottom: 1rem;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-}
-
-.homeLink {
+.backLink {
   color: var(--foreground);
   text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1.5rem;
   padding: 0.5rem 1rem;
   border: 1px solid var(--foreground);
   border-radius: 4px;
   transition: all 0.2s;
 }
 
-.homeLink:hover {
+.backLink:hover {
   background-color: var(--foreground);
   color: var(--background);
+}
+
+.header {
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
 }
 
 .main {
@@ -51,17 +49,36 @@
 }
 
 .postCard {
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 1.5rem;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid;
   position: relative;
+  background: var(--background);
+  isolation: isolate;
+}
+
+.postCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(90deg, var(--gradient-colors));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  opacity: 0.6;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .postCard:hover {
-  border-color: var(--foreground);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 0 20px rgba(var(--foreground-rgb), 0.1);
   transform: translateY(-8px) scale(1.01);
+}
+
+.postCard:hover::before {
+  opacity: 1;
 }
 
 .postLink {
