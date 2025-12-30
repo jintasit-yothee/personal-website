@@ -163,3 +163,9 @@
     padding: 20px;
   }
 }
+
+.comments {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px solid rgba(var(--foreground-rgb), 0.1);
+}

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getPostBySlug, generatePostParams } from "@/lib/blog";
+import Comments from "./Comments";
 import styles from "./post.module.css";
 
 interface PostPageProps {
@@ -71,6 +72,10 @@ export default async function PostPage({ params }: PostPageProps) {
           {post.content}
         </ReactMarkdown>
       </main>
+
+      <div className={styles.comments}>
+        <Comments repo="jintasit-yothee/my-web" issueTerm="pathname" label="blog-comment" />
+      </div>
     </div>
   );
 }
