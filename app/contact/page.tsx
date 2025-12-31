@@ -48,7 +48,7 @@ export default function Contact() {
           <a
             href="https://www.linkedin.com/in/jintasit-yothee/"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer me"
             className={styles.contactCard}
           >
             <div className={styles.iconWrapper}>
@@ -74,9 +74,36 @@ export default function Contact() {
           </a>
 
           <a
+            href="https://x.com/jyo_no6"
+            target="_blank"
+            rel="noopener noreferrer me"
+            className={styles.contactCard}
+          >
+            <div className={styles.iconWrapper}>
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+              </svg>
+            </div>
+            <div className={styles.contactInfo}>
+              <h3>X (Twitter)</h3>
+              <p>@jyo_no6</p>
+            </div>
+          </a>
+
+          <a
             href="https://www.instagram.com/jintasit13/"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer me"
             className={styles.contactCard}
           >
             <div className={styles.iconWrapper}>
@@ -104,7 +131,7 @@ export default function Contact() {
           <a
             href="https://github.com/jintasit-yothee"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer me"
             className={styles.contactCard}
           >
             <div className={styles.iconWrapper}>
