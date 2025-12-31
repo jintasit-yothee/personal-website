@@ -30,9 +30,38 @@ export async function generateMetadata({ params }: PostPageProps) {
     };
   }
 
+  const url = `https://www.jintasit.com${post.url}`;
+
   return {
     title: post.title,
     description: post.excerpt || `Read ${post.title}`,
+    authors: [{ name: 'Jintasit Yothee' }],
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt || `Read ${post.title}`,
+      url: url,
+      siteName: 'Jintasit Yothee',
+      images: post.image ? [{
+        url: post.image,
+        width: 1200,
+        height: 630,
+        alt: post.title,
+      }] : [],
+      locale: 'en_US',
+      type: 'article',
+      publishedTime: post.date,
+      authors: ['Jintasit Yothee'],
+      tags: post.tags,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt || `Read ${post.title}`,
+      images: post.image ? [post.image] : [],
+    },
   };
 }
 
@@ -44,8 +73,36 @@ export default async function PostPage({ params }: PostPageProps) {
     notFound();
   }
 
+  const blogPostingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt || post.title,
+    image: post.image ? `https://www.jintasit.com${post.image}` : undefined,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      '@type': 'Person',
+      name: 'Jintasit Yothee',
+      url: 'https://www.jintasit.com',
+    },
+    publisher: {
+      '@type': 'Person',
+      name: 'Jintasit Yothee',
+      url: 'https://www.jintasit.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://www.jintasit.com${post.url}`,
+    },
+  };
+
   return (
     <div className={styles.container}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
       <header className={styles.header}>
         <Link href="/blog" className={styles.backLink}>
           &larr; Back to Blog
