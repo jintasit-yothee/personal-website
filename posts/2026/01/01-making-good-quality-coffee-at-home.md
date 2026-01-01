@@ -7,7 +7,7 @@ tags: ["lifestyle"]
 ---
 
 # Making Good Quality Coffee at Home
-People like coffee and drink it every day, sometimes even multiple times a day. If you buy coffee at a cafe or coffee shop, it'll cost you a lot of money. Wouldn't it be better to save some money by making coffee yourself? You might think, "Well, easy, I can buy instant coffee from the supermarket and mix it with hot water in a cup." That's easy, but wouldn't it be even better to make higher quality coffee from coffee beans? I mean, similar quality to a cafe, but without needing an expensive machine.
+People like coffee and drink it every day, sometimes even multiple times a day. If you buy coffee at a cafe or coffee shop, it'll cost you a lot of money. Wouldn't it be better to save some money by making coffee yourself? You might think, "Well, easy, I can buy instant coffee from the supermarket and mix it with hot water in a cup." That's easy, but wouldn't it be even better to make higher quality coffee from coffee beans and still make it quickly? I mean, similar quality to a cafe, but without needing an expensive machine.
 
 There are ways you can make coffee at home using just a few pieces of equipment. Today, I'm going to share what I think is the easiest way to make coffee at home using a French press. 
 
@@ -23,6 +23,8 @@ All of these you can buy online at an affordable price. The French press, electr
 1. Boil water using the kettle.
 2. While waiting for the water to boil, grind the coffee beans using the grinder. The grinder should have a manual to set up the grind size. You should set the grind size to match the French press (coarse grind).
 3. Pour the ground coffee into the French press and follow with the boiled water. How much coffee beans and boiled water should you use? I suggest you experiment yourself, because each person has their own preference. It might take you several attempts to find your ideal ratio. But once you know your preference, it'll be very easy to make coffee every time.
+
+I can complete all of these steps in just 5 minutes. It might not be as quick as instant coffee, but for me, this is fast enough while still making good quality coffee.
 
 
 ## Coffee bean roast level
