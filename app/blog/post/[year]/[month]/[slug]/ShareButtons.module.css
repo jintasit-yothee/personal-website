@@ -1,0 +1,75 @@
+.shareContainer {
+  margin: 3rem 0;
+  padding: 0;
+}
+
+.shareTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #6b7280;
+}
+
+.shareButtons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.shareButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.shareButton:hover {
+  background-color: #e5e7eb;
+  color: #1f2937;
+  transform: translateY(-2px);
+}
+
+.shareButton:active {
+  transform: translateY(0);
+}
+
+.shareButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.copiedMessage {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: #059669;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .shareContainer {
+    margin: 2rem 0;
+    padding: 1.5rem 0;
+  }
+
+  .shareTitle {
+    font-size: 1rem;
+  }
+
+  .shareButtons {
+    gap: 0.75rem;
+  }
+
+  .shareButton {
+    width: 40px;
+    height: 40px;
+  }
+}

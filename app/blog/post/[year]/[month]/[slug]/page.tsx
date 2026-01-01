@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getPostBySlug, generatePostParams } from "@/lib/blog";
 import Comments from "./Comments";
+import ShareButtons from "./ShareButtons";
 import styles from "./post.module.css";
 
 interface PostPageProps {
@@ -129,6 +130,8 @@ export default async function PostPage({ params }: PostPageProps) {
           {post.content}
         </ReactMarkdown>
       </main>
+
+      <ShareButtons url={post.url} title={post.title} />
 
       <div className={styles.comments}>
         <Comments repo="jintasit-yothee/personal-website" issueTerm="pathname" label="blog-comment" />
