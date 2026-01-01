@@ -10,11 +10,13 @@ export default function Contact() {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <Link href="/" className={styles.backLink}>
-          &larr; Back to Home
-        </Link>
+        <header className={styles.header}>
+          <h1>Get in Touch</h1>
+          <Link href="/" className={styles.backLink}>
+            &larr; Back to Home
+          </Link>
+        </header>
 
-        <h1>Get in Touch</h1>
         <p className={styles.subtitle}>
           Feel free to reach out through any of these channels
         </p>

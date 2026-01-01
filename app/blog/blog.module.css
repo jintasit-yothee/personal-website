@@ -1,14 +1,13 @@
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 40px 70px;
+  padding: 40px 70px 70px;
 }
 
 .backLink {
   color: var(--foreground);
   text-decoration: none;
   display: inline-block;
-  margin-bottom: 1.5rem;
   padding: 0.5rem 1rem;
   border: 1px solid var(--foreground);
   border-radius: 4px;
@@ -21,8 +20,10 @@
 }
 
 .header {
-  margin-bottom: 3rem;
-  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 .header h1 {
@@ -79,6 +80,48 @@
 
 .postCard:hover::before {
   opacity: 1;
+}
+
+.latestPost {
+  background: linear-gradient(135deg,
+      rgba(255, 107, 107, 0.08),
+      rgba(255, 184, 77, 0.08));
+  box-shadow: 0 8px 24px rgba(255, 107, 107, 0.2),
+    0 0 30px rgba(255, 107, 107, 0.12);
+}
+
+.latestPost::before {
+  padding: 3px;
+  opacity: 1;
+  background: linear-gradient(135deg, var(--gradient-colors));
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.latestBadge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: linear-gradient(135deg, #FF6B6B, #FFB84D);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+  z-index: 2;
 }
 
 .postLink {
@@ -141,17 +184,35 @@
   font-size: 0.95rem;
 }
 
-.searchBar {
+.filterContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(var(--foreground-rgb), 0.02);
+  border-radius: 8px;
+}
+
+.tagFilter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.searchBar {
+  flex-shrink: 0;
+  min-width: 250px;
 }
 
 .searchInput {
   width: 100%;
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
   border: 1px solid rgba(var(--foreground-rgb), 0.2);
-  border-radius: 8px;
-  background: rgba(var(--foreground-rgb), 0.02);
+  border-radius: 6px;
+  background: var(--background);
   color: var(--foreground);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
@@ -164,18 +225,8 @@
 
 .searchInput:focus {
   border-color: var(--foreground);
-  background: rgba(var(--foreground-rgb), 0.05);
-  box-shadow: 0 0 0 3px rgba(var(--foreground-rgb), 0.1);
-}
-
-.tagFilter {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 2.5rem;
-  padding: 1.5rem;
-  background: rgba(var(--foreground-rgb), 0.02);
-  border-radius: 8px;
+  background: var(--background);
+  box-shadow: 0 0 0 2px rgba(var(--foreground-rgb), 0.1);
 }
 
 .tagButton {
@@ -230,15 +281,42 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 20px;
+    padding: 15px 20px 20px;
+  }
+
+  .backLink {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .header {
+    margin-bottom: 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .filterContainer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .searchBar {
+    min-width: unset;
+    order: -1;
+  }
+
+  .searchInput {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.9rem;
   }
 
   .postsList {
     grid-template-columns: 1fr;
-  }
-
-  .tagFilter {
-    padding: 1rem;
   }
 
   .postLink h2 {
