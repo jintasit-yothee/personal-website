@@ -2,6 +2,7 @@
   max-width: 990px;
   margin: 0 auto;
   padding: 40px 70px;
+  overflow-x: hidden;
 }
 
 .header {
@@ -10,15 +11,24 @@
   padding-bottom: 2rem;
 }
 
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
 .backLink {
   color: var(--foreground);
   text-decoration: none;
   display: inline-block;
-  margin-bottom: 1.5rem;
   padding: 0.5rem 1rem;
   border: 1px solid var(--foreground);
   border-radius: 4px;
   transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .backLink:hover {
@@ -27,9 +37,11 @@
 }
 
 .title {
-  margin: 0 0 1rem 0;
+  margin: 0;
   font-size: 2.5rem;
   line-height: 1.2;
+  flex: 1;
+  min-width: 0;
 }
 
 .date {
@@ -161,6 +173,25 @@
 @media (max-width: 768px) {
   .container {
     padding: 20px;
+  }
+
+  .titleRow {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .backLink {
+    margin-left: auto;
+  }
+
+  .title {
+    font-size: 1.75rem;
+    flex: 1 1 100%;
+    word-break: break-word;
+    hyphens: auto;
+    order: 1;
   }
 }
 

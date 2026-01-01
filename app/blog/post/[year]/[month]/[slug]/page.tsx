@@ -105,10 +105,12 @@ export default async function PostPage({ params }: PostPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
       />
       <header className={styles.header}>
-        <Link href="/blog" className={styles.backLink}>
-          &larr; Back to Blog
-        </Link>
-        <h1 className={styles.title}>{post.title}</h1>
+        <div className={styles.titleRow}>
+          <h1 className={styles.title}>{post.title}</h1>
+          <Link href="/blog" className={styles.backLink}>
+            &larr; Back to Blog
+          </Link>
+        </div>
         <p className={styles.date}>{post.date}</p>
       </header>
 
