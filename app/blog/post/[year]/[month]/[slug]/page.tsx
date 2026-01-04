@@ -16,6 +16,15 @@ interface PostPageProps {
   }>;
 }
 
+const formatDate = (dateString: string): string => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
+};
+
 export async function generateStaticParams() {
   const params = await generatePostParams();
   return params;
@@ -111,7 +120,7 @@ export default async function PostPage({ params }: PostPageProps) {
             &larr; Back to Blog
           </Link>
         </div>
-        <p className={styles.date}>{post.date}</p>
+        <p className={styles.date}>{formatDate(post.date)}</p>
       </header>
 
       {post.image && (

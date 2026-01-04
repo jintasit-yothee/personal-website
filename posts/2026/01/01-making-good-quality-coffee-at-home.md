@@ -36,8 +36,3 @@ But it depends on your preference—you may like dark roast or super dark roast,
 I like to try and explore different kinds of coffee and the different processes they use to make coffee beans. For instance, Honey process, Dry process, Washed process, and many more. Those different processes give different tastes.
 
 Lastly, I want to help the farmers who grow coffee. Direct sales to customers are better than selling to middlemen, right? If we buy their products directly, they get more profit margin, and that's what I want to support.
-
----
-
-*Published: 01 Jan 2026*
-

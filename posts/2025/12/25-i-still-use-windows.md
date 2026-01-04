@@ -43,7 +43,3 @@ If you want to use Linux, don't use NVIDIA. That's what many people say on the i
 Windows, of course, with WSL as an environment for development. I found a balance using Windows with WSL, which runs Linux as a subsystem on Windows. This allows me to still use the GUI, and at the same time I can also use a Unix-like terminal on WSL.
 
 I think WSL isn't as smooth compared to the native terminal on Linux itself. But it's good enough for me to use the terminal for developing projects in my free time. Developing with Linux commands in the terminal—and that's pretty cool.
-
----
-
-*Published: 25 Dec 2025*

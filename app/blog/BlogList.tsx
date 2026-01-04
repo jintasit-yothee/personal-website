@@ -32,6 +32,15 @@ const getRainbowGradient = (date: string): string => {
   return rotatedColors.join(", ");
 };
 
+const formatDate = (dateString: string): string => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
+};
+
 export default function BlogList({ posts, allTags }: BlogListProps) {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
@@ -115,16 +124,6 @@ export default function BlogList({ posts, allTags }: BlogListProps) {
                   )}
                   <div className={styles.postContent}>
                     <h2>{post.title}</h2>
-                    <p className={styles.date}>{post.date}</p>
-                    {post.tags && post.tags.length > 0 && (
-                      <div className={styles.postTags}>
-                        {post.tags.map((tag) => (
-                          <span key={tag} className={styles.tag}>
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
                     {post.excerpt && (
                       <p className={styles.excerpt}>
                         {post.excerpt.length > excerptLength
@@ -132,6 +131,18 @@ export default function BlogList({ posts, allTags }: BlogListProps) {
                           : post.excerpt}
                       </p>
                     )}
+                    <div className={styles.metadata}>
+                      <p className={styles.date}>{formatDate(post.date)}</p>
+                      {post.tags && post.tags.length > 0 && (
+                        <div className={styles.postTags}>
+                          {post.tags.map((tag) => (
+                            <span key={tag} className={styles.tag}>
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </Link>
               </article>
