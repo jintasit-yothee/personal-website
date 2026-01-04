@@ -1,0 +1,37 @@
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-primary, var(--foreground));
+  flex-wrap: wrap;
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.breadcrumb a {
+  color: var(--text-primary, var(--foreground));
+  text-decoration: none;
+  transition: all 0.2s;
+  opacity: 0.8;
+}
+
+.breadcrumb a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.separator {
+  opacity: 0.6;
+  margin: 0 0.25rem;
+}
+
+.current {
+  opacity: 1;
+  font-weight: 500;
+}

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Breadcrumb from "@/app/components/Breadcrumb";
 import styles from "./contact.module.css";
 
 export const metadata = {
@@ -10,11 +10,13 @@ export default function Contact() {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
+        <Breadcrumb items={[
+          { label: "Home", href: "/" },
+          { label: "Contact" }
+        ]} />
+
         <header className={styles.header}>
           <h1>Get in Touch</h1>
-          <Link href="/" className={styles.backLink}>
-            &larr; Back to Home
-          </Link>
         </header>
 
         <p className={styles.subtitle}>

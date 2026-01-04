@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
@@ -6,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import { getPostBySlug, generatePostParams } from "@/lib/blog";
 import Comments from "./Comments";
 import ShareButtons from "./ShareButtons";
+import Breadcrumb from "@/app/components/Breadcrumb";
 import styles from "./post.module.css";
 
 interface PostPageProps {
@@ -113,13 +113,14 @@ export default async function PostPage({ params }: PostPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
       />
+      <Breadcrumb items={[
+        { label: "Home", href: "/" },
+        { label: "Blog", href: "/blog" },
+        { label: post.title }
+      ]} />
+
       <header className={styles.header}>
-        <div className={styles.titleRow}>
-          <h1 className={styles.title}>{post.title}</h1>
-          <Link href="/blog" className={styles.backLink}>
-            &larr; Back to Blog
-          </Link>
-        </div>
+        <h1 className={styles.title}>{post.title}</h1>
         <p className={styles.date}>{formatDate(post.date)}</p>
       </header>
 

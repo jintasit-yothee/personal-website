@@ -23,7 +23,7 @@
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  gap: 40px;
+  gap: 20px;
   max-width: 800px;
   width: 100%;
 }
