@@ -2,6 +2,8 @@
   --background: #fafaf9;
   --foreground: #2d2d2d;
   --foreground-rgb: 45, 45, 45;
+  --border-color: rgba(209, 213, 219, 0.8);
+  --border-color-hover: rgba(0, 0, 0, 0.8);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -9,6 +11,8 @@
     --background: #1a1a1a;
     --foreground: #e5e5e5;
     --foreground-rgb: 229, 229, 229;
+    --border-color: rgba(75, 85, 99, 0.6);
+    --border-color-hover: rgba(156, 163, 175, 0.8);
   }
 }
 

@@ -11,27 +11,6 @@ interface BlogListProps {
   allTags: string[];
 }
 
-const getRainbowGradient = (date: string): string => {
-  const day = new Date(date).getDate();
-  const rainbowColors = [
-    "#FF6B6B",
-    "#FF8E53",
-    "#FFB84D",
-    "#9AE67D",
-    "#6A9CFF",
-    "#B07CE8",
-  ];
-
-  const startIndex = (day - 1) % 6;
-
-  const rotatedColors = [
-    ...rainbowColors.slice(startIndex),
-    ...rainbowColors.slice(0, startIndex),
-  ];
-
-  return rotatedColors.join(", ");
-};
-
 const formatDate = (dateString: string): string => {
   const date = new Date(dateString);
   return date.toLocaleDateString('en-US', {
@@ -103,9 +82,6 @@ export default function BlogList({ posts, allTags }: BlogListProps) {
               <article
                 key={post.slug}
                 className={`${styles.postCard} ${isLatest ? styles.latestPost : ''}`}
-                style={{
-                  ['--gradient-colors' as any]: getRainbowGradient(post.date),
-                }}
               >
                 {isLatest && (
                   <div className={styles.latestBadge}>Latest</div>
